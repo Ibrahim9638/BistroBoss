@@ -4,8 +4,10 @@ import Category from '../../Category/Category';
 import PopularMenu from '../../PopularMenu/PopularMenu';
 import Features from '../../Features/Features';
 import Testimonial from '../../Testimonial/Testimonial';
+import { useTitle } from '../../../Hooks/useTitle';
 
 const Home = () => {
+    useTitle('Home');
     return (
         <div>
             <Banner></Banner>

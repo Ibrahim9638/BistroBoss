@@ -1,13 +1,39 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
+import { AuthContext } from '../../../Provider/AuthProvider';
 
 const NavBar = () => {
+  const {user, logOut} = useContext(AuthContext);
+
+    const handleLogOut = () =>{
+      logOut()
+      .then(()=>{})
+      .catch((error)=>{console.log(error);});
+    }
     const navItems = <>
-    <Link to='/' className='font-extrabold'><li><a>Home</a></li></Link>
-    <Link to='/' className='font-extrabold'><li><a>About</a></li></Link>
+
+    <li><Link to='/' className='font-extrabold'>Home</Link></li>
+    <li><Link to='/menu' className='font-extrabold'>Our Menu</Link></li>
+    <li><Link to='/order/salad' className='font-extrabold'>Order Food</Link></li>
+    <li><Link to='/secret' className='font-extrabold'>Secret</Link></li>
+    {
+      user ? 
+      <>
+       <img  style={{width:'50px', height:'50px', borderRadius:'50%'}}
+       src={user?.photoURL} alt="" title={user?.displayName}  />
+
+      <button onClick={handleLogOut} className="font-extrabold pl-2">Logout</button>
+      </> : 
+      <>
+      <li><Link to='/login' className='font-extrabold'>Login</Link></li>
+      </>
+    }
+
+  
+    
     </>
     return (
-        <div className="navbar fixed z-10 bg-opacity-25 bg-black text-white">
+        <div className="navbar fixed z-10 bg-opacity-25 bg-black text-white max-w-screen-xl">
   <div className="navbar-start">
     <div className="dropdown">
       <label tabIndex={0} className="btn btn-ghost lg:hidden">

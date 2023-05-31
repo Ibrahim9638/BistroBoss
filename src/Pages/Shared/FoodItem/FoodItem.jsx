@@ -1,8 +1,8 @@
-import React from "react";
+import React from 'react';
 
-const Menu = ({ item }) => {
-  const { name, recipe, image, price } = item;
-  return (
+const FoodItem = ({item}) => {
+    const { name, recipe, image, price } = item;
+    return (     
     <div className="flex space-x-4 mb-4 px-4">
       <img className="md:w-[100px] w-[70px] h-[70px]" 
       style={{borderRadius:'0 200px 200px 200px'}} 
@@ -14,8 +14,9 @@ const Menu = ({ item }) => {
       <div>
         <h3 className="text-warning">${price}</h3>
       </div>
+      
     </div>
   );
 };
 
-export default Menu;
+export default FoodItem;

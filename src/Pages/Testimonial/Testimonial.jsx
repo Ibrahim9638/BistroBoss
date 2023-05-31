@@ -11,24 +11,25 @@ import { Pagination, Navigation } from "swiper";
 import { Rating } from "@smastrom/react-rating";
 import '@smastrom/react-rating/style.css'
 
+
 const Testimonial = () => {
   const [reviews, setReviews] = useState([]);
+
   useState(() => {
-    fetch("/public/reviews.json")
+    fetch("http://localhost:5000/reviews")
       .then((res) => res.json())
       .then((data) => setReviews(data));
   }, []);
+
   return (
-    <div className="my-20">
-      <SectionTitle
+    <div className="">
+
+       <SectionTitle
         subHeading="---What Our Clients Say---"
         heading="TESTIMONIALS"
-      ></SectionTitle>
-      <div className="">
+      ></SectionTitle> 
+      
         <Swiper
-          pagination={{
-            type: "progressbar",
-          }}
           navigation={true}
           modules={[Pagination, Navigation]}
           className="mySwiper"
@@ -59,7 +60,7 @@ const Testimonial = () => {
           ))}
         </Swiper>
       </div>
-    </div>
+    
   );
 };
 

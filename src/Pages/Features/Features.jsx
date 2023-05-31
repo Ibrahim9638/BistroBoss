@@ -11,12 +11,12 @@ const Features = () => {
             subHeading="---Check it out---"
             heading="FROM OUR MENU"
             ></SectionTitle>
-            <div className='md:flex justify-center items-center pb-20 pt-12 px-36'>
+            <div className='lg:flex justify-center items-center lg:pb-20 lg:pt-12 lg:px-36 p-6'>
                 <div>
                     <img className='rounded' src={feature} alt="" />
                 </div>
-                <div className='md:ml-10'>
-                    <h4 className='text-xl mb-1'>March 20, 2023</h4>
+                <div className='lg:ml-10'>
+                    <h4 className='lg:text-xl mb-1'>March 20, 2023</h4>
                     <h3 className='text-xl mb-1'>WHERE CAN I GET SOME?</h3>
                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellat quasi facere repellendus cum reiciendis culpa nobis perspiciatis autem delectus, voluptates, sed dignissimos illum in deleniti quaerat necessitatibus numquam ad temporibus. Voluptate et quia labore fugiat illum itaque aliquid natus velit.</p>
 
