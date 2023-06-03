@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import React, { useContext, useEffect } from "react";
 import logImg from "../../assets/others/authentication1.png";
 import { loadCaptchaEnginge, LoadCanvasTemplate,validateCaptcha } from 'react-simple-captcha';
 import { Link, useLocation, useNavigate } from "react-router-dom";
@@ -11,7 +11,7 @@ const Login = () => {
   const location = useLocation();
   const from = location.state?.from?.pathname || "/";
 
-    const [disable, setDisable] = useState(true)
+    // const [disable, setDisable] = useState(true)
 
     useEffect(()=>{
         loadCaptchaEnginge(6); 
@@ -101,7 +101,7 @@ const Login = () => {
             </div>
            
             <div className="form-control mt-6">
-              <input disabled={disable} className="btn bg-[#D1A054] border-0" type="submit" value="Login" />
+              <input disabled={false} className="btn bg-[#D1A054] border-0" type="submit" value="Login" />
             </div>
           <p className="text-orange-400 text-center"><small>New Here? <Link to='/signUp' className=" font-bold">Create a New Account</Link></small></p>
           </form>
